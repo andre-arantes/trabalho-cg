@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho Prático 1 - André Arantes</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        #canvas {
+            background-color: white;
+            border: 1px solid black;
+        }
+        .control-panel {
+            width: 200px;
+        }
+        .control-panel select, .control-panel button {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .control-panel label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="control-panel">
+        <label for="rasterizationDropdown">Algoritmos de Rasterização:</label>
+        <select id="rasterizationDropdown">
+            <option value="">Selecione...</option>
+            <option value="DDA">DDA</option>
+            <option value="Bresenham">Bresenham</option>
+            <option value="BresenhamCircle">Bresenham Circle</option>
+        </select>
+
+        <label for="transformationDropdown">Transformações:</label>
+        <select id="transformationDropdown">
+            <option value="">Selecione...</option>
+            <option value="Translation">Translação</option>
+            <option value="Rotation">Rotação</option>
+            <option value="Scaling">Escala</option>
+            <option value="ReflectionX">Reflexão X</option>
+            <option value="ReflectionY">Reflexão Y</option>
+            <option value="ReflectionXY">Reflexão XY</option>
+        </select>
+
+        <label for="rotationInput">Rotação (graus):</label>
+        <input type="number" id="rotationInput" placeholder="0">
+
+        <label for="scalingInput">Escala (a,b):</label>
+        <input type="text" id="scalingInput" placeholder="(0,0)">
+
+        <label for="translationInput">Translação (a,b):</label>
+        <input type="text" id="translationInput" placeholder="(0,0)">
+
+        <label for="clippingDropdown">Clipping:</label>
+        <select id="clippingDropdown">
+            <option value="">Selecione...</option>
+            <option value="CohenSutherland">Cohen Sutherland</option>
+            <option value="LiangBarsky">Liang Barsky</option>
+        </select>
+
+        <button id="rasterButton">Rasterização</button>
+        <button id="transformationButton">Transformação</button>
+        <button id="clippingAreaButton">Área recorte</button>
+        <button id="clippingButton">Clipping</button>
+        <button id="clearButton">Limpar</button>
+    </div>
+
+    <canvas id="canvas" width="1600" height="900"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
